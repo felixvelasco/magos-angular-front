@@ -1,7 +1,7 @@
 <h2>Detalle de {{child.name}}</h2>
-<div class="container-fluid">
-  <div class="row">
-    <div ng-repeat="present in presents" class="col-md-4 panel panel-info">
+<div class="row">
+  <div ng-repeat="present in presents" class="col-md-4">
+    <div class="panel panel-info">
       <div class="panel-heading">{{present.name}}</div>
       <div class="panel-body">
         <img ng-if="present.img" src="{{present.img}}" class="img-responsive" >
@@ -10,5 +10,6 @@
       <div ng-if="present.url" class="panel-footer">
         <a ng-href="{{present.url}}">Amazon</a>
       </div>
+    </div>
   </div>
 </div>

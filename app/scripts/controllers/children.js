@@ -25,5 +25,5 @@ angular.module('magosApp')
     ];
     $scope.showChild = function (id) {
       $location.path('/child/'+ id);
-    }
+    };
   });
