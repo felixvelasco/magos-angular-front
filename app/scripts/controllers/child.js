@@ -8,7 +8,7 @@
  * Controller of the magosApp
  */
 angular.module('magosApp')
-  .controller('ChildCtrl', function ($scope, $location, $routeParams, ChildrenSrv) {
+  .controller('ChildCtrl', function ($scope, $routeParams, ChildrenSrv) {
     var childId = $routeParams.childId;
 
     $scope.child = ChildrenSrv.getChild(childId);
