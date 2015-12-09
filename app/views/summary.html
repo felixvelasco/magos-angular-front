@@ -1,0 +1,29 @@
+<h2>Tabla de hijos</h2>
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="child in children">
+      <td>{{child.name}}</td>
+      <td>{{child.state}}</td>
+    </tr>
+</table>
+
+<h2>Tabla de niños</h2>
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="kid in kids">
+      <td>{{kid.name}}</td>
+      <td>{{kid.state}}</td>
+    </tr>
+</table>

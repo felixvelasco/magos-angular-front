@@ -1,0 +1,16 @@
+<h2>Niños para regalar</h2>
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Padre</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="kid in kids">
+      <td>{{kid.name}}</td>
+      <td>{{kid.parentName}}</td>
+      <td>{{kid.state}}</td>
+    </tr>
+</table>

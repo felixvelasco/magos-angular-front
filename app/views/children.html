@@ -1,0 +1,16 @@
+<h2>Tabla de hijos</h2>
+<table class="table table-condensed table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Regalos cubiertos</th>
+      <th>Regalos pendientes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="child in children">
+      <td ng-click="showChild(child.id)">{{child.name}}</td>
+      <td>{{child.assignedCount}}</td>
+      <td>{{child.pendingCount}}</td>
+    </tr>
+</table>
