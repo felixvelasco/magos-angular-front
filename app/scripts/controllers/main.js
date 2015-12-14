@@ -8,11 +8,5 @@
  * Controller of the magosApp
  */
 angular.module('magosApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma',
-      'ES6'
-    ];
+  .controller('MainCtrl', function () {
   });
