@@ -16,8 +16,8 @@ angular.module('magosApp')
 
     $scope.create = function () {
       ChildrenSrv.addPresent(childId, $scope.name, $scope.description);
-      $scope.name="";
-      $scope.description="";
+      $scope.name='';
+      $scope.description='';
     };
 
   });
