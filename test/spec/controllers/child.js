@@ -10,7 +10,10 @@ describe('Controller: ChildCtrl', function () {
     childrenSrv,
     scope;
   var childValue,
-    presentsValue;
+    presentsValue,
+    childId,
+    scopeName,
+    scopeDescription;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
@@ -19,12 +22,18 @@ describe('Controller: ChildCtrl', function () {
       { name: 'Bicicleta', description: 'Pero no la va a conseguir' },
       { name: 'Calabazas', description: 'Pero no las de la huerta' },
     ];
+    scopeName = 'nombre';
+    scopeDescription = 'descripcion';
+    childId = 3324;
 
     scope = $rootScope.$new();
-    routeParams = { childId: 1 };
+    scope.name = scopeName;
+    scope.description = scopeDescription;
+    routeParams = { childId: childId };
     childrenSrv = {
       getChild : jasmine.createSpy().and.returnValue(childValue),
       getPresents: jasmine.createSpy().and.returnValue(presentsValue),
+      addPresent: jasmine.createSpy(),
     };
 
     ChildCtrl = $controller('ChildCtrl', {
@@ -35,12 +44,17 @@ describe('Controller: ChildCtrl', function () {
   }));
 
   it('should make the proper calls to the server', function () {
-    expect(childrenSrv.getChild).toHaveBeenCalledWith(1);
-    expect(childrenSrv.getPresents).toHaveBeenCalledWith(1);
+    expect(childrenSrv.getChild).toHaveBeenCalledWith(childId);
+    expect(childrenSrv.getPresents).toHaveBeenCalledWith(childId);
   });
 
   it('should set the returned values in the scope', function () {
     expect(scope.child).toEqual(childValue);
     expect(scope.presents).toEqual(presentsValue);
+  });
+
+  it('should retrieve the new present information from the scope', function() {
+    scope.create();
+    expect(childrenSrv.addPresent).toHaveBeenCalledWith(childId, scopeName, scopeDescription);
   });
 });

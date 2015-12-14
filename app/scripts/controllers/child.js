@@ -13,4 +13,11 @@ angular.module('magosApp')
 
     $scope.child = ChildrenSrv.getChild(childId);
     $scope.presents = ChildrenSrv.getPresents(childId);
+
+    $scope.create = function () {
+      ChildrenSrv.addPresent(childId, $scope.name, $scope.description);
+      $scope.name="";
+      $scope.description="";
+    };
+
   });

@@ -47,7 +47,7 @@ angular.module('magosApp')
           description: 'Tren a pilas para las vias de madera, compatible con las de ikea',
           url: 'http://www.amazon.es/BRIO-Tren-juguete-color-33592/dp/B00AOVSLOC/ref=sr_1_1',
           img: 'http://ecx.images-amazon.com/images/I/81zvfKJu-gL._SL1500_.jpg',
-          precio: 20.99,
+          price: 20.99,
         },
         {
           name: 'Playmobil Comisaría de Policía',
@@ -61,7 +61,7 @@ angular.module('magosApp')
           url: 'http://www.amazon.es/Rubies-Capit%C3%A1n-Am%C3%A9rica-disfraz-610424-M/dp/B00S7L5RW0/ref=sr_1_1',
           description: 'Un disfraz del Capi, porque el Capi es el jefe',
           img: 'http://ecx.images-amazon.com/images/I/418w5tixc2L.jpg',
-          precio: 29.99,
+          price: 29.99,
         },
       ],
     };
@@ -72,6 +72,12 @@ angular.module('magosApp')
       },
       getChild: function (id) {
         return data[id].child;
+      },
+      addPresent: function (childId, name, description) {
+        data[childId].presents.push({
+          name: name,
+          description: description,
+        });
       }
      };
   }]);
